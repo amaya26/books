@@ -17,7 +17,7 @@ if ($search_type == "title") {
 }
 
 elseif($search_type == "author") {
-    $sql_conditions = "";
+    $sql_conditions = "WHERE $name_search";
 }
 
 else {

@@ -3,13 +3,13 @@
 // check user is logged on 
 if (isset($_SESSION['admin'])) {
     
-// retrieve quote ID and sanitise it in case someone edits the URL
+// retrieve book ID and sanitise it in case someone edits the URL
 $book_ID = filter_var($_REQUEST['Book_ID'], FILTER_SANITIZE_NUMBER_INT);
 
-// adjust heading and find quote
+// adjust heading and find book
 $heading_type = "delete_book";
 $heading = "";
-$sql_conditions = "WHERE ID = $book_ID";
+$sql_conditions = "WHERE Book_ID = $book_ID";
 
 include("content/results.php");
 
@@ -25,7 +25,7 @@ include("content/results.php");
 
 <p>
     <span class="tag white-tag">
-    <a href="index.php?page=../admin/deletebook&ID=<?php echo $book_ID; ?>&author=<?php echo $author_ID ?>">Yes, Delete it!</a>
+    <a href="index.php?page=../admin/deletebook&Book_ID=<?php echo $book_ID; ?>&author=<?php echo $author_ID ?>">Yes, Delete it!</a>
     </span>
 
     &nbsp;

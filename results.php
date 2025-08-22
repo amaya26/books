@@ -27,28 +27,28 @@ elseif ($heading_type == "author") {
 
     $author_name = $author_rs['First']." ".$author_rs['Middle']." ".$author_rs['Last'];
 
-    $heading = "<h2>$author_name Quotes ($find_count $result_s)</h2>";
+    $heading = "<h2>$author_name Books ($find_count $result_s)</h2>";
 }
 
-elseif ($heading_type == "quote_success") {
-    $heading = "<h2>Insert Quote Success</h2>
-    <p>You have inserted the following quote...</p>";
+elseif ($heading_type == "book_success") {
+    $heading = "<h2>Insert Book Success</h2>
+    <p>You have inserted the following book...</p>";
 }
 
 elseif ($heading_type == "edit_success") {
-    $heading = "<h2>Edit Quote Success</h2>
-    <p>You have edited the quote. The entry is now...</p>";
+    $heading = "<h2>Edit Book Success</h2>
+    <p>You have edited the book. The entry is now...</p>";
 }
 
-elseif ($heading_type == "delete_quote") {
-    $heading = "<h2>Delete Quote - Are You Sure?</h2>
-    <p>Do you really want to delete the quote in the box below?</p>";
+elseif ($heading_type == "delete_book") {
+    $heading = "<h2>Delete Book - Are You Sure?</h2>
+    <p>Do you really want to delete the book in the box below?</p>";
 }
 
 echo $heading;
 
 while($find_rs = mysqli_fetch_assoc($find_query)) {
-    $quote = $find_rs['Title'];
+    $book = $find_rs['Title'];
     $ID = $find_rs['Book_ID'];
 
     // create full name of author
@@ -60,7 +60,7 @@ while($find_rs = mysqli_fetch_assoc($find_query)) {
     ?>
 
     <div class="results">
-        <?php echo $quote; ?>
+        <?php echo $book; ?>
 
         <p><i>
             <a href="index.php?page=all_results&search=author&Author_ID=<?php echo $author_ID; ?>"><?php echo $author_full; ?></a>

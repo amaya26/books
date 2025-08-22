@@ -10,9 +10,8 @@ function clean_input($dbconnect, $data) {
 }
 
 function get_data($dbconnect, $more_condition=null) {
-// q => quotes table
+// b => book table
 // a => author table
-//s => s1, s2 and s3 are subjects
 
 $find_sql = "SELECT 
 b.*,
@@ -68,7 +67,7 @@ return $all_items;
 // Delete ghost authors 
 function delete_ghost($dbconnect, $authorID)
 {
-    // see if there are other quotes by that author
+    // see if there are other books by that author
     $check_author_sql = "SELECT * FROM `books` WHERE `Author_ID` = 
     $authorID ";
     $check_author_query = mysqli_query($dbconnect,
@@ -76,7 +75,7 @@ function delete_ghost($dbconnect, $authorID)
 
     $count_author = mysqli_num_rows($check_author_query);
 
-    // if there are not quotes associated with the old
+    // if there are not books associated with the old
     //author we can delete the old author
     if ($count_author <= 1) {
         $delete_ghost = "DELETE FROM `author` WHERE `author`.

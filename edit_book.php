@@ -6,7 +6,7 @@ if (isset($_SESSION['admin'])) {
 // retrieve subjects and authors to populate combo box
 include("sub_author.php");
 
-// Retrieve current values for quote...
+// Retrieve current values for book...
 $ID = $_REQUEST['Book_ID'];
 
 // get values from DB
@@ -24,7 +24,7 @@ print_r($_REQUEST);
 ?>
 
 <div class = "admin-form">
-    <h1>Edit a Quote</h1>
+    <h1>Edit a Book</h1>
 
     <form action="index.php?page=../admin/change_book&Book_ID=<?php echo $ID;?>& 
     authorID=<?php echo $author_ID; ?>" method="post">

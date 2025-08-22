@@ -1,5 +1,5 @@
 <div class="box banner">
-    <h1>Quick Quotes</h1>
+    <h1>books or something</h1>
 </div> <!-- / banner -->
 
 <!-- Navigation goes here. edit BOTH the file name and the link name -->
@@ -21,7 +21,7 @@
 
                 <select class="quick-choose" name="search_type">
                     <option value="all" selected>All</option>
-                    <option value="quote">Book</option>
+                    <option value="title">Book</option>
                     <option value="author">Author</option>
                 </select>
 
