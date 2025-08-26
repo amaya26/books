@@ -1,0 +1,236 @@
+body {
+    color: #13070C;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+}
+
+/* Box for corners and padding */
+.box {
+    padding-left: 20px;
+    /* border-radius: 10px; */
+    /* background-colour: #ddd; */
+}
+
+/* set up grids... specifics */
+
+/* #### grid for main page #### */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "banner"
+        "nav"
+        "main"
+        "footer";
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.nav {
+    grid-area: nav;
+    font-size: 150%;
+    background-color: #F6F3F6;
+    padding: 20px;
+    vertical-align: middle;
+}
+
+.main {
+    grid-area: main;
+    background-color: #B7ADCF; /* very pale peach */
+}
+
+.footer {
+    grid-area: footer;
+    text-align: right;
+    padding: 20px;
+}
+
+/* #### grid for naviagtion area page #### */
+
+.linkwrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-areas: "commonsearches topsearch topadmin";
+    grid-gap: 4px;
+}
+
+.commonsearches {
+    grid-area: commonsearches;
+    text-align: left;
+}
+
+.topsearch {
+    grid-area: topsearch;
+    text-align: right;
+}
+
+.topadmin {
+    grid-area: topadmin;
+    text-align: right;
+}
+
+/* #### Additional div styling (put colours / corners here) */
+
+/* Area colouring... */
+
+/* logo, banner and footer background are the same */
+.banner, .footer {
+    background-color: #45364B; /* light grey */
+    color: #F6F3F6;
+}
+
+
+/* #### Links Styling #### */
+
+/* Navigation Links */
+a.topnav {font-weight: bold;}
+a.topnav:link, a.topnav:visited {color: #007c72;} /* dark teal */
+a.topnav.hover {color: #707a00; text-decoration: none;}
+
+/* links in page */
+a {font-weight: bold;}
+a:link{color: #007c72;}
+a:visited{color: #222;}
+a:hover{color: #707a00;}
+
+/* #### Headings / text styling #### */
+h1, h2, h2, h4 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.important {
+    background-color: #ffb6b6;
+    padding: 10px;
+}
+
+.light_blue {
+    background-color: lightskyblue;
+    padding: 10px;
+}
+
+.results {
+    background-color: #F6F3F6;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.tag {
+    background-color: bisque;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px #13070C;
+    border-radius: 5px;
+}
+
+.subject-tag {
+    background-color: bisque;
+}
+
+.white-tag {
+    background-color: #F6F3F6;
+}
+
+.no-results {
+    padding: 5px;
+    background-color: #ffbbbb;
+    border: solid 1px #a40f0f;
+}
+
+.error {
+    color: #a40f0f;
+}
+
+/* #### Form / Search Styling #### */
+
+form {
+    width: 100%;
+}
+
+.search {
+    background: #F6F3F6;
+    width: 200px;
+    height: 39px;
+}
+
+.admin-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-submit {
+    width: 100%;
+}
+
+input, textarea {
+    font-size: 14px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #13070C;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.submit {
+    font-family: 'FontAwesome';
+    position: relative;
+    width: 45px;
+    height: 39px;
+    font-size: 14px;
+    left: -5px;
+    background-color: #62466B;
+    color: #F6F3F6;
+    border: 1px solid #13070C;
+    border-radius: 0 5px 5px 0;
+    display: inline-block;
+    padding: 10px;
+
+}
+
+.tools {
+    text-align: right;
+    padding-right: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #13070C;
+    color: #F6F3F6;
+}
+
+.quicksearch {
+    border-radius: 5px 0 0 5px;
+    display: inline-block;
+    margin-right: -5px;
+}
+
+.quick-choose {
+    padding: 10px;
+    border: solid 1px #13070C;
+}
+
+/* Rules for navigation on small screens */
+@media only screen and (max-width: 1175px) {
+    .linkwrapper{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "commonsearches topadmin"
+        "topsearch topsearch";
+    }
+
+    /* Adjust alignment of content on small screens */
+    .commonsearches {
+        text-align: left;
+    }
+
+    .topsearch {
+        width: 100%;
+        text-align: left;
+    }
+}
