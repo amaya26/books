@@ -22,9 +22,26 @@ if ($author_full == "") {
     $author_full = $first = "Anonymous";
 }
 
-// check to see if author is in DB, if it isn't add it.
+//Check to see if movie exists in db
+$find_book_id = "SELECT * FROM books b WHERE Title LIKE '$book'";
+$find_book_query = mysqli_query($dbconnect, $find_book_id);
+$book_count = mysqli_num_rows($find_book_query);
 
-// check to see if author exists
+if ($book_count > 0) {
+    ?>
+
+    <h2>Duplicate Book</h2>
+
+    <div class="error-message">
+        Unfortunately, the book you tried to add is already in the database. Please try a different book. 
+    </div>
+    <br />
+
+    <?php
+}
+
+else {
+    // check to see if author exists
 $find_author_id = "SELECT * FROM author a WHERE CONCAT(a.First, ' ', a.Middle, ' ', a.Last) LIKE '%$author_full%' OR CONCAT(a.First, ' ', a.Last) LIKE '%$author_full%'";
 $find_author_query = mysqli_query($dbconnect, $find_author_id);
 $find_author_rs = mysqli_fetch_assoc($find_author_query);
@@ -85,4 +102,10 @@ else {
     header("Location: index.php?page=../admin/login&error=$login_error");
 }
 
+}
+
 ?>
+
+
+
+

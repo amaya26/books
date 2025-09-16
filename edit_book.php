@@ -19,8 +19,6 @@ $author_ID = $edit_results_rs['Author_ID'];
 $author_full_name = $edit_results_rs['Full_Name'];
 $book = $edit_results_rs['Title'];
 
-print_r($_REQUEST);
-
 ?>
 
 <div class = "admin-form">

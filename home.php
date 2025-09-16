@@ -9,3 +9,5 @@
     You can also browse by most recent book or click the 'random' link to get the 
     system to generate ten books for you.
 </p>
+
+<img src="images/book_image.jpg" alt="Books on a shelf">

@@ -101,7 +101,7 @@ else {
 
     <h2>Sorry!</h2>
 
-    <div class="no-results">
+    <div class="error-message">
         Unfortunately - there were no results from your search. Please try again.
     </div>
     <br />

@@ -1,12 +1,13 @@
 <div class="box banner">
-    <h1>books or something</h1>
+    <h1>Books</h1>
 </div> <!-- / banner -->
 
-<!-- Navigation goes here. edit BOTH the file name and the link name -->
+<!-- Navigation goes here -->
 <div class="box nav">
 
     <div class="linkwrapper">
         <div class="commonsearches">
+            <a href="index.php">Home</a>
             <a href="index.php?page=all_results&search=all">All Books</a>
             <a href="index.php?page=all_results&search=recent">Recent</a>
             <a href="index.php?page=all_results&search=random">Random</a>
