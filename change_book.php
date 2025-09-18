@@ -10,8 +10,7 @@ if (isset($_SESSION['admin'])) {
 // retrieve book and author ID from form
 // check they are integers (in case someone edits the URL)
 $book_ID = filter_var($_REQUEST['Book_ID'], FILTER_SANITIZE_NUMBER_INT);
-$old_author = filter_var($_REQUEST['Author_ID'],
-FILTER_SANITIZE_NUMBER_INT);
+$old_author = filter_var($_REQUEST['Author_ID'], FILTER_SANITIZE_NUMBER_INT);
 
     include("process_form.php");
 

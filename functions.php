@@ -68,10 +68,8 @@ return $all_items;
 function delete_ghost($dbconnect, $authorID)
 {
     // see if there are other books by that author
-    $check_author_sql = "SELECT * FROM `books` WHERE `Author_ID` = 
-    $authorID ";
-    $check_author_query = mysqli_query($dbconnect,
-    $check_author_sql);
+    $check_author_sql = "SELECT * FROM `books` WHERE `Author_ID` = $authorID ";
+    $check_author_query = mysqli_query($dbconnect, $check_author_sql);
 
     $count_author = mysqli_num_rows($check_author_query);
 

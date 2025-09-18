@@ -25,7 +25,7 @@ $book = $edit_results_rs['Title'];
     <h1>Edit a Book</h1>
 
     <form action="index.php?page=../admin/change_book&Book_ID=<?php echo $ID;?>& 
-    authorID=<?php echo $author_ID; ?>" method="post">
+    Author_ID=<?php echo $author_ID; ?>" method="post">
         <p>
             <textarea name="Title" placeholder="Title (Required)" required><?php echo $book; ?></textarea>
         </p>
@@ -40,15 +40,10 @@ $book = $edit_results_rs['Title'];
             <p><input name="author_full" id="author_full" value="<?php echo str_replace('  ', ' ', $author_full_name); ?>" /></p>
         </div>
 
-        <div class="light_blue">
-            Blank subjects appear as n/a. You can either edit these
-             / add a subject or leave them as n/a.
-        </div>
-
         <br>
 
         <p><input class="form-submit" type="submit"  name="submit"
-        value="Edit Title" /></p>
+        value="Edit Book" /></p>
 
     </form>
 

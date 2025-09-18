@@ -7,7 +7,7 @@ if (isset($_SESSION['admin'])) {
 
 {
     // retrieve data from form
-    $book = $_REQUEST['title'];
+    $book = $_REQUEST['Title'];
 
     $author_full = $_REQUEST['author_full'];
 
@@ -47,35 +47,7 @@ $find_author_query = mysqli_query($dbconnect, $find_author_id);
 $find_author_rs = mysqli_fetch_assoc($find_author_query);
 $author_count = mysqli_num_rows($find_author_query);
 
-// retrieve author id if author exists
-if ($author_count > 0) {
-    $author_ID = $find_author_rs['Author_ID'];
-}
-
-else {
-    // split author name and add to DB
-    $names = explode(' ', $author_full);
-
-    if(count($names) > 1) {
-        $first = $names[0];
-        $last = $names[count($names) - 1];}
-
-    elseif (count($names) == 1) {
-        $first = $names[0];}
-
-    // Check if a middle name exists
-    if (count($names) > 2) {
-        $middle = implode(' ', array_slice($names, 1, -1));
-    }
-
-// add name to DB
-$stmt = $dbconnect -> prepare("INSERT INTO `author` (`First`, `Middle`, `Last`) VALUES (?, ?, ?); ");
-$stmt -> bind_param("sss", $first, $middle, $last);
-$stmt -> execute();
-
-$author_ID = $dbconnect -> insert_id;
-
-} // end name split else
+include("admin/process_form.php");
 
 // insert book
 $stmt = $dbconnect -> prepare("INSERT INTO `Books` (`Author_ID`, `Title`) VALUES (?, ?); ");

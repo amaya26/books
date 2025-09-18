@@ -14,7 +14,7 @@ $all_authors = autocomplete_list($dbconnect, $author_full_sql, 'Full_Name');
 
     <form action="index.php?page=../admin/insert_book" method="post">
         <p>
-            <textarea name="title" placeholder="Title (Required)"
+            <textarea name="Title" placeholder="Title (Required)"
             required></textarea>
         </p>
 
