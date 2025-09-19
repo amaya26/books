@@ -3,7 +3,7 @@
 // Check user is logged on
 if (isset($_SESSION['admin'])) {
 
-// retrieve subjects and authors to populate combo box
+// retrieve authors to populate combo box
 include("sub_author.php");
 
 // Retrieve current values for book...

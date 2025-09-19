@@ -1,5 +1,5 @@
 <div class="box banner">
-    <h1>Books</h1>
+    <h1>The Book Nook</h1>
 </div> <!-- / banner -->
 
 <!-- Navigation goes here -->

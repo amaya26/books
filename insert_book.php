@@ -22,7 +22,7 @@ if ($author_full == "") {
     $author_full = $first = "Anonymous";
 }
 
-//Check to see if movie exists in db
+//Check to see if book exists in db
 $find_book_id = "SELECT * FROM books b WHERE Title LIKE '$book'";
 $find_book_query = mysqli_query($dbconnect, $find_book_id);
 $book_count = mysqli_num_rows($find_book_query);

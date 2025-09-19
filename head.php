@@ -1,11 +1,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Website / database featuring books">
-    <meta name="keywords" content="books">
+    <meta name="keywords" content="books, authors">
     <meta name="author" content="Amaya">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Books</title>
+    <title>The Book Nook</title>
 
     <!-- edit link -->
     <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="data_style.css">
